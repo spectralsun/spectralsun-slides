@@ -19,7 +19,11 @@ h2 {
     margin-top: 0;
 }
 #large-applications-with-flask .figure {
-    margin: 152px;
+    margin: 123px;
+}
+#large-applications-with-flask p:nth-child(3) {
+    float: right;
+    margin: -37px;
 }
 
 /* Simple server slide */

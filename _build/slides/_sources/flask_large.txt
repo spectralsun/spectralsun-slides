@@ -2,14 +2,18 @@
 Large Applications with Flask
 =============================
 
-spectralsun 04/11/2013
+by spectralsun 
+
+revised: 04/11/2013
+
+http://spectralsun.com
 
 .. figure:: /_static/images/flask-logo.png
     :align: center
 
-Source: https://github.com/spectralsun/spectralsun-slides
+source: https://github.com/spectralsun/spectralsun-slides
 
-Prerequisite knowledge
+Prerequisite Knowledge
 ======================
 
 Having this knowledge is recommended, but may not be necessary for you to gain value:
@@ -17,7 +21,7 @@ Having this knowledge is recommended, but may not be necessary for you to gain v
 * Python
 * Pip
 
-Having this knowledge is optional, but may you gain more value:
+Having this knowledge is optional, but with it you may gain more value:
 
 * Flask/Django
 * Virtual Environments (virtualenv)
@@ -82,7 +86,7 @@ Django-Inspired Example:
     config.py
     manage.py
 
-An Alternative:
+An Alternative Example:
 
 .. code-block:: bash
 
