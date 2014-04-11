@@ -4,6 +4,10 @@ Large Applications with Flask
 
 spectralsun 04/11/2013
 
+.. figure:: /_static/images/flask-logo.png
+    :align: center
+
+Source: https://github.com/spectralsun/spectralsun-slides
 
 Prerequisite knowledge
 ======================

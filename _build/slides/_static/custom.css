@@ -13,6 +13,12 @@ h2 {
     font-size: 50px;
 }
 
+/** Large Applications with Flask**/
+#large-applications-with-flask h1 {
+    font-size: 1.91em;
+    margin-top: 0;
+}
+
 /* Simple server slide */
 #simple-server .highlight-python {
     border-right: 1px solid #000000;
@@ -40,11 +46,11 @@ h2 {
 
 
 /*  Structure of a Large App */
-#structure-of-a-large-flask-project div.highlight-bash:first-child {
+#structure-of-a-large-flask-project div.highlight-bash:nth-child(3) {
     border-right: 1px solid #000000;
     display: inline-block;
     padding-bottom: 52px;
-    padding-right: 130px;
+    padding-right: 113px;
 }
 
 #structure-of-a-large-flask-project p:nth-child(4) {
