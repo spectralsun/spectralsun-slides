@@ -28,8 +28,8 @@ Having this knowledge is optional, but with it you may gain more value:
 * SQL/SQLAlchemy
 * HTML/CSS/Javascript
 
-Simple Server
-=============
+Simple Flask Project
+====================
 
 .. code-block:: bash
 
