@@ -1,0 +1,36 @@
+h2 {
+    position: relative;
+    bottom: auto;
+}
+
+#welcome-to-spectralsun-s-slides h1 {
+    margin-top: 0;
+    font-size: 50px;
+}
+
+/* Simple server slide */
+
+#simple-server .highlight-python {
+    border-right: 1px solid #000000;
+    display: inline-block;
+    font-size: 25px;
+    padding-right: 13px;
+}
+
+#simple-server .highlight-python pre {
+    margin-bottom: 0;
+}
+
+#simple-server p:nth-child(5) {
+    bottom: 286px;
+    position: absolute;
+    right: 278px;
+}
+
+
+#simple-server div.highlight-bash:last-child {
+    bottom: 103px;
+    font-size: 26px;
+    position: absolute;
+    right: 26px;
+}
