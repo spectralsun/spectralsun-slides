@@ -62,7 +62,7 @@ h2 {
 
 #structure-of-a-large-flask-project p:nth-child(4) {
     position: absolute;
-    right: 227px;
+    right: 133px;
     top: 85px;
 }
 #structure-of-a-large-flask-project div.highlight-bash:last-child {
@@ -70,4 +70,10 @@ h2 {
     right: 86px; 
     top: 100px; 
     font-size: 0.93em;
+}
+
+/* Flask-Script: Manage.py */
+
+#flask-script-manage-py pre {
+    margin: 13px 0;
 }

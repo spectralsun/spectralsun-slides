@@ -112,12 +112,38 @@ An Alternative Example:
     config.py
     manage.py
 
-Manage.py
+Flask-Script: Manage.py
 =========
 
 .. code-block:: bash
     
-    $ pip install Flask-script
+    $ pip install Flask-Script
+
+.. code-block:: python
+    
+    from flask.ext.script import Manager
+
+    from appname import main, database
+
+    manager = Manager(main.app)
+
+    @manager.command
+    def init_db():
+        database.init_db()
+        print "* Successfully initialized database."
+
+    if __name__ == "__main__":
+        manager.run()
+
+.. code-block:: bash
+
+    $ python manage.py runserver -t 0.0.0.0 -p 4000
+        * Running on http://0.0.0.0:4000/
+
+.. code-block:: bash
+    
+    $ python manage.py init_db
+        * Successfully initialized database.
 
 Blueprints
 ==========
