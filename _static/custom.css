@@ -14,7 +14,6 @@ h2 {
 }
 
 /* Simple server slide */
-
 #simple-server .highlight-python {
     border-right: 1px solid #000000;
     display: inline-block;
@@ -32,10 +31,30 @@ h2 {
     right: 278px;
 }
 
-
 #simple-server div.highlight-bash:last-child {
     bottom: 103px;
     font-size: 26px;
     position: absolute;
     right: 26px;
+}
+
+
+/*  Structure of a Large App */
+#structure-of-a-large-flask-project div.highlight-bash:nth-child(3) {
+    border-right: 1px solid #000000;
+    display: inline-block;
+    padding-bottom: 52px;
+    padding-right: 113px;
+}
+
+#structure-of-a-large-flask-project p:nth-child(4) {
+    position: absolute;
+    right: 227px;
+    top: 85px;
+}
+#structure-of-a-large-flask-project div.highlight-bash:last-child {
+    position: absolute; 
+    right: 86px; 
+    top: 100px; 
+    font-size: 0.93em;
 }

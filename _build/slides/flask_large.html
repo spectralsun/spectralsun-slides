@@ -34,7 +34,8 @@
     <script type="text/javascript" src="_static/controller.js"></script>
     <script type="text/javascript" src="_static/init.js"></script>
     
-    <link rel="top" title="SpectralSun&#39;s Slides 0.1 documentation" href="index.html" /> 
+    <link rel="top" title="SpectralSun&#39;s Slides 0.1 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to SpectralSun&#39;s Slides!" href="index.html" /> 
   </head>
   <body>
 
@@ -55,9 +56,9 @@
 <li>Python</li>
 <li>Pip</li>
 </ul>
-<p>Having knowledge is optional, but will help you gain more value:</p>
+<p>Having this knowledge is optional, but may you gain more value:</p>
 <ul class="simple">
-<li>Flask</li>
+<li>Flask/Django</li>
 <li>Virtual Environments (virtualenv)</li>
 <li>SQL/SQLAlchemy</li>
 <li>HTML/CSS/Javascript</li>
@@ -96,8 +97,9 @@
 </div>
 
 </article>
-<article class="slide level-2" id="structure-of-a-large-app">
-<h2>Structure of a Large App</h2>
+<article class="slide level-2" id="structure-of-a-large-flask-project">
+<h2>Structure of a Large Flask Project</h2>
+<p>Django-Inspired Example:</p>
 <div class="highlight-bash"><div class="highlight"><pre>/appname
     main.py
     database.py
@@ -108,10 +110,33 @@
         /static
             style.css
         /templates
-            layout.jinja
             index.jinja
-            login.jinja
     ...
+config.py
+manage.py
+</pre></div>
+</div>
+<p>An Alternative:</p>
+<div class="highlight-bash"><div class="highlight"><pre>/appname
+    main.py
+    database.py
+    models.py
+    /controllers
+        __init__.py
+        users.py
+        admin.py
+    /templates
+        /users
+            login.jinja
+        /admin
+            backend.jinja
+    /static
+        /users
+            login.css
+        /admin
+            backend.css
+    ...
+config.py
 manage.py
 </pre></div>
 </div>

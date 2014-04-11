@@ -13,9 +13,9 @@ Having this knowledge is recommended, but may not be necessary for you to gain v
 * Python
 * Pip
 
-Having knowledge is optional, but will help you gain more value:
+Having this knowledge is optional, but may you gain more value:
 
-* Flask
+* Flask/Django
 * Virtual Environments (virtualenv)
 * SQL/SQLAlchemy
 * HTML/CSS/Javascript
@@ -56,8 +56,10 @@ Start it up:
     $ python main.py
         * Running on http://localhost:5000/
 
-Structure of a Large App
-========================
+Structure of a Large Flask Project
+==================================
+
+Django-Inspired Example:
 
 .. code-block:: bash
 
@@ -71,10 +73,35 @@ Structure of a Large App
             /static
                 style.css
             /templates
-                layout.jinja
                 index.jinja
-                login.jinja
         ...
+    config.py
+    manage.py
+
+An Alternative:
+
+.. code-block:: bash
+
+    /appname
+        main.py
+        database.py
+        models.py
+        /controllers
+            __init__.py
+            users.py
+            admin.py
+        /templates
+            /users
+                login.jinja
+            /admin
+                backend.jinja
+        /static
+            /users
+                login.css
+            /admin
+                backend.css
+        ...
+    config.py
     manage.py
 
 Manage.py
@@ -83,7 +110,6 @@ Manage.py
 .. code-block:: bash
     
     $ pip install Flask-script
-
 
 Blueprints
 ==========
