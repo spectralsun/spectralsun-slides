@@ -3,6 +3,11 @@ h2 {
     bottom: auto;
 }
 
+.slides > article.past,
+.slides > article.next {
+    display: none;
+}
+
 #welcome-to-spectralsun-s-slides h1 {
     margin-top: 0;
     font-size: 50px;
