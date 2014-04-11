@@ -106,7 +106,10 @@
 <article class="slide level-2" id="structure-of-a-large-flask-project">
 <h2>Structure of a Large Flask Project</h2>
 <p>Django-Inspired Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre>/appname
+<div class="highlight-bash"><div class="highlight"><pre>config.py
+manage.py
+/appname
+    __init__.py
     main.py
     database.py
     /appmodule
@@ -117,13 +120,13 @@
             style.css
         /templates
             index.jinja
-    ...
-config.py
-manage.py
 </pre></div>
 </div>
 <p>An Alternative Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre>/appname
+<div class="highlight-bash"><div class="highlight"><pre>config.py
+manage.py
+/appname
+    __init__.py
     main.py
     database.py
     models.py
@@ -132,18 +135,13 @@ manage.py
         users.py
         admin.py
     /templates
+        index.jinja
         /users
             login.jinja
-        /admin
-            backend.jinja
     /static
+        index.css
         /users
             login.css
-        /admin
-            backend.css
-    ...
-config.py
-manage.py
 </pre></div>
 </div>
 
@@ -178,8 +176,8 @@ manage.py
 </div>
 
 </article>
-<article class="slide level-2" id="blueprints">
-<h2>Blueprints</h2>
+<article class="slide level-2" id="blueprints-modular-applications">
+<h2>Blueprints: Modular Applications</h2>
 
 </article>
 

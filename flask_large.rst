@@ -71,7 +71,10 @@ Django-Inspired Example:
 
 .. code-block:: bash
 
+    config.py
+    manage.py
     /appname
+        __init__.py
         main.py
         database.py
         /appmodule
@@ -82,15 +85,17 @@ Django-Inspired Example:
                 style.css
             /templates
                 index.jinja
-        ...
-    config.py
-    manage.py
+        
+    
 
 An Alternative Example:
 
 .. code-block:: bash
 
+    config.py
+    manage.py
     /appname
+        __init__.py
         main.py
         database.py
         models.py
@@ -99,18 +104,15 @@ An Alternative Example:
             users.py
             admin.py
         /templates
+            index.jinja
             /users
                 login.jinja
-            /admin
-                backend.jinja
         /static
+            index.css
             /users
                 login.css
-            /admin
-                backend.css
-        ...
-    config.py
-    manage.py
+        
+    
 
 Flask-Script: Manage.py
 =======================
