@@ -108,30 +108,23 @@ Blueprints: Modular Applications
 Forms
 =====
 
-.. code-block:: bash
+.. include:: flask_large/forms/install.rst
 
-    pip install Flask-WTF
+Forms
+=====
 
-.. code-block:: python
-    
-    # /appname/forms.py
-    from flask_wtf import Form
-    from wtforms import TextField, TextAreaField
-    from wtforms.validators import DataRequired
+.. include:: flask_large/forms/install.rst
 
-    class ContactForm(Form):
-        name = TextField('name', validators=[DataRequired()])
-        email = TextField('email', validators=[DataRequired()])
-        message = TextAreaField('email', validators=[DataRequired()])
+.. include:: flask_large/forms/forms.rst
 
-.. code-block:: python
-    
-    # ...
-    @app.route('/contact')
-    def contact():
-        orm = ContactForm(request.form, prefix='contact_')
-    if not form.validate():
+Forms
+=====
 
+.. include:: flask_large/forms/install.rst
+
+.. include:: flask_large/forms/forms.rst
+
+.. include:: flask_large/forms/contact.rst
 
 Rendering Forms 
 ===============

@@ -344,6 +344,31 @@ manage.py
 <div class="highlight-bash"><div class="highlight"><pre>pip install Flask-WTF
 </pre></div>
 </div>
+
+</article>
+<article class="slide level-2" id="id9">
+<h2>Forms</h2>
+<div class="highlight-bash"><div class="highlight"><pre>pip install Flask-WTF
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># /appname/forms.py</span>
+<span class="kn">from</span> <span class="nn">flask_wtf</span> <span class="kn">import</span> <span class="n">Form</span>
+<span class="kn">from</span> <span class="nn">wtforms</span> <span class="kn">import</span> <span class="n">TextField</span><span class="p">,</span> <span class="n">TextAreaField</span>
+<span class="kn">from</span> <span class="nn">wtforms.validators</span> <span class="kn">import</span> <span class="n">DataRequired</span>
+
+<span class="k">class</span> <span class="nc">ContactForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;email&#39;</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">TextAreaField</span><span class="p">(</span><span class="s">&#39;email&#39;</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id10">
+<h2>Forms</h2>
+<div class="highlight-bash"><div class="highlight"><pre>pip install Flask-WTF
+</pre></div>
+</div>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># /appname/forms.py</span>
 <span class="kn">from</span> <span class="nn">flask_wtf</span> <span class="kn">import</span> <span class="n">Form</span>
 <span class="kn">from</span> <span class="nn">wtforms</span> <span class="kn">import</span> <span class="n">TextField</span><span class="p">,</span> <span class="n">TextAreaField</span>
@@ -358,8 +383,9 @@ manage.py
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># ...</span>
 <span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/contact&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">contact</span><span class="p">():</span>
-    <span class="n">orm</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&#39;contact_&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">form</span><span class="o">.</span><span class="n">validate</span><span class="p">():</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&#39;contact_&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">validate</span><span class="p">():</span>
+        <span class="c"># send email</span>
 </pre></div>
 </div>
 
