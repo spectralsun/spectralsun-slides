@@ -29,9 +29,14 @@ h2 {
     float: right;
     margin: -37px;
 }
-#fifth-sized-flask p:nth-child(4) {
+#fifth-sized-flask p:nth-child(6) {
     position: absolute;
     bottom: 13px;
+}
+#fifth-sized-flask p:nth-child(7) {
+    position: absolute;
+    top: 40px;
+    right: 80px;
 }
 #fifth-sized-flask img {
     position: absolute;

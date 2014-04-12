@@ -6,6 +6,5 @@ Contents:
 .. toctree::
     :maxdepth: 1
     
-    flask_large
-
+    fifth_sized_flask
 
