@@ -1,6 +1,6 @@
 .. code-block:: jinja
     
-    {# /appname/templates/macro/form.jinja #}
+    {# /appname/templates/macros/form.jinja #}
     {% macro render_field(field) %}
         <div id="{{ field.id }}_row" class="form-group">
             {{ field.label(class_='col-lg-2 control-label') }}

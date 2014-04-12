@@ -148,26 +148,117 @@ Rendering Forms
 Forms with SQL Alchemy
 ======================
 
-.. code-block:: python
-    
-    # /appname/models.py
-    from sqlalchemy import Column, String
+.. include:: fifth_sized_flask/form_alchemy/install.rst
 
-    
+Forms with SQL Alchemy
+======================
+
+.. include:: fifth_sized_flask/form_alchemy/install.rst
+
+.. include:: fifth_sized_flask/form_alchemy/models.rst
+
+Forms with SQL Alchemy
+======================
+
+.. include:: fifth_sized_flask/form_alchemy/install.rst
+
+.. include:: fifth_sized_flask/form_alchemy/models.rst
+
+.. include:: fifth_sized_flask/form_alchemy/form.rst
 
 
 Assets
 ======
 
-Cache
-=====
+.. include:: fifth_sized_flask/assets/install.rst
+
+Assets
+======
+
+.. include:: fifth_sized_flask/assets/install.rst
+
+.. include:: fifth_sized_flask/assets/assets.rst
+
+Assets
+======
+
+.. include:: fifth_sized_flask/assets/install.rst
+
+.. include:: fifth_sized_flask/assets/assets.rst
+
+.. include:: fifth_sized_flask/assets/main.rst
+
+Assets
+======
+
+.. include:: fifth_sized_flask/assets/install.rst
+
+.. include:: fifth_sized_flask/assets/assets.rst
+
+.. include:: fifth_sized_flask/assets/main.rst
+
+.. include:: fifth_sized_flask/assets/jinja.rst
+
+..Cache
+..=====
+
 
 Users
 =====
 
+.. code-block:: bash
+
+    $ pip install Flask-Login
+
+.. code-block:: python
+
+   # ...
+
+   class User(Model):
+        __tablenanme__ = 'users'
+        id = Column(Integer, primary_key=True)
+        username = Column(String(255), unique=True)
+
+        def is_authenticated():
+            return true 
+
+
+.. code-block:: python
+
+    login_manager = LoginManager()
+    login_manager.init_app(app)
+
+Using Users
+===========
+
+.. code-block:: python
+
+    @app.route("/login", methods=["GET", "POST"])
+    def login():
+        form = LoginForm()
+        if form.validate_on_submit():
+            # login and validate the user...
+            login_user(user)
+            flash("Logged in successfully.")
+            return redirect(request.args.get("next") or url_for("index"))
+        return render_template("login.html", form=form)
+
+.. code-block:: python
+
+    @app.route("/settings")
+    @login_required
+    def settings():
+        pass
 
 Web Sockets
 ===========
+
+.. code-block:: bash
+    
+    $ pip install flask-socketio
+
+
+
 
 
 Uploading Multiple files via AJAX?
