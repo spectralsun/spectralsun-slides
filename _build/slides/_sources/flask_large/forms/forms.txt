@@ -7,5 +7,4 @@
 
     class ContactForm(Form):
         name = TextField('name', validators=[DataRequired()])
-        email = TextField('email', validators=[DataRequired()])
         message = TextAreaField('email', validators=[DataRequired()])

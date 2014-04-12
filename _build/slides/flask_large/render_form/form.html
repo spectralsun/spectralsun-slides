@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &mdash; SpectralSun&#39;s Slides 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/slides.css" type="text/css" />
+    
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    
+
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/common.js"></script>
+    <script type="text/javascript" src="../../_static/slides.js"></script>
+    <script type="text/javascript" src="../../_static/sync.js"></script>
+    <script type="text/javascript" src="../../_static/controller.js"></script>
+    <script type="text/javascript" src="../../_static/init.js"></script>
+    
+    <link rel="top" title="SpectralSun&#39;s Slides 0.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  <div class="highlight-jinja"><div class="highlight"><pre><span class="c">{# /appname/templates/form.jinja #}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">macro</span> <span class="nv">render_field</span><span class="o">(</span><span class="nv">field</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;div id=&quot;</span><span class="cp">{{</span> <span class="nv">field.id</span> <span class="cp">}}</span><span class="x">_row&quot; class=&quot;form-group&quot;&gt;</span>
+<span class="x">        </span><span class="cp">{{</span> <span class="nv">field.label</span><span class="o">(</span><span class="nv">class_</span><span class="o">=</span><span class="s1">&#39;col-lg-2 control-label&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">        &lt;div class=&quot;col-lg-10&quot;&gt;</span>
+<span class="x">            </span><span class="cp">{{</span> <span class="nv">field</span><span class="o">(</span><span class="nv">class_</span><span class="o">=</span><span class="s2">&quot;form-control&quot;</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/div&gt;</span>
+<span class="cp">{%</span> <span class="k">endmacro</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">macro</span> <span class="nv">render_form</span><span class="o">(</span><span class="nv">form</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">field</span> <span class="k">in</span> <span class="nv">form</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{{</span> <span class="nv">render_field</span><span class="o">(</span><span class="nv">field</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endmacro</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>

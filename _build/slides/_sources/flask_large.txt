@@ -129,26 +129,19 @@ Forms
 Rendering Forms 
 ===============
 
-.. code-block:: jinja
+.. include:: flask_large/render_form/field.rst
 
-    {% macro render_field(field) %}
-        <div id="{{ field.id }}_row" class="form-group">
-            {{ field.label(class_='col-lg-2 control-label') }}
-            <div class="col-lg-10">
-                {{ field(class_="form-control") }}
-            </div>
-        </div>
-    {% endmacro %}
+Rendering Forms 
+===============
 
-.. code-block:: jinja
+.. include:: flask_large/render_form/form.rst
 
-    {% macro render_form(form) %}
-        {% for field in form %}
-            {{ render_field(field) }}
-        {% endfor %}
-    {% endmacro %}
+Rendering Forms 
+===============
 
+.. include:: flask_large/render_form/form.rst
 
+.. include:: flask_large/render_form/use.rst
 
 Forms with SQL Alchemy
 ======================

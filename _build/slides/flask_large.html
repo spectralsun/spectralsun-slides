@@ -358,7 +358,6 @@ manage.py
 
 <span class="k">class</span> <span class="nc">ContactForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
-    <span class="n">email</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;email&#39;</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
     <span class="n">message</span> <span class="o">=</span> <span class="n">TextAreaField</span><span class="p">(</span><span class="s">&#39;email&#39;</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
 </pre></div>
 </div>
@@ -376,23 +375,27 @@ manage.py
 
 <span class="k">class</span> <span class="nc">ContactForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
-    <span class="n">email</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;email&#39;</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
     <span class="n">message</span> <span class="o">=</span> <span class="n">TextAreaField</span><span class="p">(</span><span class="s">&#39;email&#39;</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">DataRequired</span><span class="p">()])</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># ...</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># /appname/main.py</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">render_template</span>
+<span class="kn">from</span> <span class="nn">appname.forms</span> <span class="kn">import</span> <span class="n">ContactForm</span>
+<span class="c"># ...</span>
 <span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/contact&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">contact</span><span class="p">():</span>
     <span class="n">form</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&#39;contact_&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">validate</span><span class="p">():</span>
         <span class="c"># send email</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;contact.jinja&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 
 </article>
 <article class="slide level-2" id="rendering-forms">
 <h2>Rendering Forms</h2>
-<div class="highlight-jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">macro</span> <span class="nv">render_field</span><span class="o">(</span><span class="nv">field</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight-jinja"><div class="highlight"><pre><span class="c">{# /appname/templates/macros/form.jinja #}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">macro</span> <span class="nv">render_field</span><span class="o">(</span><span class="nv">field</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    &lt;div id=&quot;</span><span class="cp">{{</span> <span class="nv">field.id</span> <span class="cp">}}</span><span class="x">_row&quot; class=&quot;form-group&quot;&gt;</span>
 <span class="x">        </span><span class="cp">{{</span> <span class="nv">field.label</span><span class="o">(</span><span class="nv">class_</span><span class="o">=</span><span class="s1">&#39;col-lg-2 control-label&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
 <span class="x">        &lt;div class=&quot;col-lg-10&quot;&gt;</span>
@@ -402,11 +405,51 @@ manage.py
 <span class="cp">{%</span> <span class="k">endmacro</span> <span class="cp">%}</span><span class="x"></span>
 </pre></div>
 </div>
-<div class="highlight-jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">macro</span> <span class="nv">render_form</span><span class="o">(</span><span class="nv">form</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
+
+</article>
+<article class="slide level-2" id="id11">
+<h2>Rendering Forms</h2>
+<div class="highlight-jinja"><div class="highlight"><pre><span class="c">{# /appname/templates/form.jinja #}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">macro</span> <span class="nv">render_field</span><span class="o">(</span><span class="nv">field</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;div id=&quot;</span><span class="cp">{{</span> <span class="nv">field.id</span> <span class="cp">}}</span><span class="x">_row&quot; class=&quot;form-group&quot;&gt;</span>
+<span class="x">        </span><span class="cp">{{</span> <span class="nv">field.label</span><span class="o">(</span><span class="nv">class_</span><span class="o">=</span><span class="s1">&#39;col-lg-2 control-label&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">        &lt;div class=&quot;col-lg-10&quot;&gt;</span>
+<span class="x">            </span><span class="cp">{{</span> <span class="nv">field</span><span class="o">(</span><span class="nv">class_</span><span class="o">=</span><span class="s2">&quot;form-control&quot;</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/div&gt;</span>
+<span class="cp">{%</span> <span class="k">endmacro</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">macro</span> <span class="nv">render_form</span><span class="o">(</span><span class="nv">form</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">field</span> <span class="k">in</span> <span class="nv">form</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">        </span><span class="cp">{{</span> <span class="nv">render_field</span><span class="o">(</span><span class="nv">field</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">endmacro</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id12">
+<h2>Rendering Forms</h2>
+<div class="highlight-jinja"><div class="highlight"><pre><span class="c">{# /appname/templates/form.jinja #}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">macro</span> <span class="nv">render_field</span><span class="o">(</span><span class="nv">field</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;div id=&quot;</span><span class="cp">{{</span> <span class="nv">field.id</span> <span class="cp">}}</span><span class="x">_row&quot; class=&quot;form-group&quot;&gt;</span>
+<span class="x">        </span><span class="cp">{{</span> <span class="nv">field.label</span><span class="o">(</span><span class="nv">class_</span><span class="o">=</span><span class="s1">&#39;col-lg-2 control-label&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">        &lt;div class=&quot;col-lg-10&quot;&gt;</span>
+<span class="x">            </span><span class="cp">{{</span> <span class="nv">field</span><span class="o">(</span><span class="nv">class_</span><span class="o">=</span><span class="s2">&quot;form-control&quot;</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/div&gt;</span>
+<span class="cp">{%</span> <span class="k">endmacro</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">macro</span> <span class="nv">render_form</span><span class="o">(</span><span class="nv">form</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">field</span> <span class="k">in</span> <span class="nv">form</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{{</span> <span class="nv">render_field</span><span class="o">(</span><span class="nv">field</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endmacro</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="highlight-jinja"><div class="highlight"><pre><span class="c">{# /appname/templates/contact.jinja #}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">from</span> <span class="s2">&quot;macros/form.jinja&quot;</span> <span class="k">import</span> <span class="nv">render_form</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;form method=&quot;post&quot;&gt;</span><span class="cp">{{</span> <span class="nv">render_form</span><span class="o">(</span><span class="nv">form</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&lt;/form&gt;</span>
 </pre></div>
 </div>
 

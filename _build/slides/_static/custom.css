@@ -98,3 +98,9 @@ h2 {
 #id7 pre {
     margin: 13px 0;
 }
+
+/* Forms */
+#id9 pre,
+#id10 pre {
+    margin: 15px 0;
+}
