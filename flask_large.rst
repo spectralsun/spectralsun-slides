@@ -16,140 +16,90 @@ source: https://github.com/spectralsun/spectralsun-slides
 Prerequisite Knowledge
 ======================
 
-Having this knowledge is recommended, but may not be necessary for you to gain value:
+.. include:: flask_large/prereq/recommended.rst
 
-* Python
-* Pip
+Prerequisite Knowledge
+======================
 
-Having this knowledge is optional, but with it you may gain more value:
+.. include:: flask_large/prereq/recommended.rst
 
-* Flask/Django
-* Virtual Environments (virtualenv)
-* SQL/SQLAlchemy
-* HTML/CSS/Javascript
+.. include:: flask_large/prereq/optional.rst
+
 
 Simple Flask Project
 ====================
 
-.. code-block:: bash
+.. include:: flask_large/simple/tree.rst
 
-    /appname
-        main.py
-        /static
-            style.css
-        /templates
-            index.jinja
-            ...
+Simple Flask Project
+====================
 
-main.py:
+.. include:: flask_large/simple/tree.rst
 
-.. code-block:: python
+.. include:: flask_large/simple/python.rst
 
-    from flask import Flask, render_template
-    app = Flask(__name__)
+Simple Flask Project
+====================
 
-    @app.route("/")
-    def hello():
-        return render_template('index.jinja')
+.. include:: flask_large/simple/tree.rst
 
-    if __name__ == "__main__":
-        app.run()
+.. include:: flask_large/simple/python.rst
 
-Start it up:
-
-.. code-block:: bash
-
-    $ mkvirtualenv appname 
-    $ pip install Flask
-    $ python main.py
-        * Running on http://localhost:5000/
+.. include:: flask_large/simple/bash.rst
 
 Structure of a Large Flask Project
 ==================================
+ 
+.. include:: flask_large/structure/django.rst
 
-Django-Inspired Example:
+Structure of a Large Flask Project
+==================================
+ 
+.. include:: flask_large/structure/django.rst
 
-.. code-block:: bash
-
-    config.py
-    manage.py
-    /appname
-        __init__.py
-        main.py
-        database.py
-        /appmodule
-            __init__.py
-            controller.py
-            models.py
-            /static
-                style.css
-            /templates
-                index.jinja
-        
-    
-
-An Alternative Example:
-
-.. code-block:: bash
-
-    config.py
-    manage.py
-    /appname
-        __init__.py
-        main.py
-        database.py
-        models.py
-        /controllers
-            __init__.py
-            users.py
-            admin.py
-        /templates
-            index.jinja
-            /users
-                login.jinja
-        /static
-            index.css
-            /users
-                login.css
-        
-    
+.. include:: flask_large/structure/alternate.rst
 
 Flask-Script: Manage.py
 =======================
 
-.. code-block:: bash
-    
-    $ pip install Flask-Script
+.. include:: flask_large/manage/install.rst
 
-.. code-block:: python
-    
-    from flask.ext.script import Manager
+Flask-Script: Manage.py
+=======================
 
-    from appname import main, database
+.. include:: flask_large/manage/install.rst
 
-    manager = Manager(main.app)
+.. include:: flask_large/manage/example.rst
 
-    @manager.command
-    def init_db():
-        database.init_db()
-        print "* Successfully initialized database."
 
-    if __name__ == "__main__":
-        manager.run()
+Flask-Script: Manage.py
+=======================
 
-.. code-block:: bash
+.. include:: flask_large/manage/install.rst
 
-    $ python manage.py runserver -t 0.0.0.0 -p 4000
-        * Running on http://0.0.0.0:4000/
+.. include:: flask_large/manage/example.rst
 
-.. code-block:: bash
-    
-    $ python manage.py init_db
-        * Successfully initialized database.
+.. include:: flask_large/manage/init_db.rst
+
+
+Flask-Script: Manage.py
+=======================
+
+.. include:: flask_large/manage/install.rst
+
+.. include:: flask_large/manage/example.rst
+
+.. include:: flask_large/manage/init_db.rst
+
+.. include:: flask_large/manage/runserver.rst
 
 Blueprints: Modular Applications
 ================================
 
+.. code-block:: python
+
+    # /appname/
+    from flask import Blueprint
 
 Forms
 =====
@@ -162,6 +112,8 @@ Forms with SQL Alchemy
 Assets
 ======
 
+Cache
+=====
 
 Users
 =====

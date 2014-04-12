@@ -13,7 +13,12 @@ h2 {
     font-size: 50px;
 }
 
-/** Large Applications with Flask**/
+
+/***********************************/
+/** Large Applications with Flask **/
+/***********************************/
+
+/** First slide **/
 #large-applications-with-flask h1 {
     font-size: 1.91em;
     margin-top: 0;
@@ -27,24 +32,26 @@ h2 {
 }
 
 /* Simple server slide */
-#simple-flask-project .highlight-python {
+#id2 .highlight-python,
+#id3 .highlight-python {
     border-right: 1px solid #000000;
     display: inline-block;
     font-size: 25px;
     padding-right: 13px;
 }
 
-#simple-flask-project .highlight-python pre {
+#id2 .highlight-python pre,
+#id3 .highlight-python pre {
     margin-bottom: 0;
 }
 
-#simple-flask-project p:nth-child(5) {
+#id3 p:nth-child(5) {
     bottom: 286px;
     position: absolute;
     right: 278px;
 }
 
-#simple-flask-project div.highlight-bash:last-child {
+#id3 div.highlight-bash:last-child {
     bottom: 103px;
     font-size: 26px;
     position: absolute;
@@ -53,27 +60,28 @@ h2 {
 
 
 /*  Structure of a Large App */
-#structure-of-a-large-flask-project div.highlight-bash:nth-child(3) {
+#id4 div.highlight-bash:nth-child(3) {
     border-right: 1px solid #000000;
     display: inline-block;
     padding-bottom: 52px;
     padding-right: 101px;
 }
 
-#structure-of-a-large-flask-project p:nth-child(4) {
+#id4 p:nth-child(4) {
     position: absolute;
     right: 133px;
     top: 85px;
 }
-#structure-of-a-large-flask-project div.highlight-bash:last-child {
+#id4 div.highlight-bash:last-child {
     position: absolute; 
     right: 86px; 
     top: 100px; 
-    font-size: 0.93em;
 }
 
 /* Flask-Script: Manage.py */
-
-#flask-script-manage-py pre {
+#flask-script-manage-py pre,
+#id5 pre, 
+#id6 pre, 
+#id7 pre {
     margin: 13px 0;
 }
