@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Large Applications with Flask &mdash; SpectralSun&#39;s Slides 0.1 documentation</title>
+    <title>Fifth-Sized Flask &mdash; SpectralSun&#39;s Slides 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/styles.css" type="text/css" />
@@ -44,13 +44,13 @@
    class='slides layout-regular'>
 
 
-  <article class="slide level-1" id="large-applications-with-flask">
-<h1>Large Applications with Flask</h1>
+  <article class="slide level-1" id="fifth-sized-flask">
+<h1>Fifth-Sized Flask</h1>
 <p>by spectralsun</p>
 <p>revised: 04/11/2013</p>
 <p><a class="reference external" href="http://spectralsun.com">http://spectralsun.com</a></p>
 <div class="figure align-center">
-<img alt="_images/flask-logo.png" src="_images/flask-logo.png" />
+<img alt="_images/fifth-sized-flask.png" src="_images/fifth-sized-flask.png" />
 </div>
 <p>source: <a class="reference external" href="https://github.com/spectralsun/spectralsun-slides">https://github.com/spectralsun/spectralsun-slides</a></p>
 
@@ -409,7 +409,7 @@ manage.py
 </article>
 <article class="slide level-2" id="id11">
 <h2>Rendering Forms</h2>
-<div class="highlight-jinja"><div class="highlight"><pre><span class="c">{# /appname/templates/form.jinja #}</span><span class="x"></span>
+<div class="highlight-jinja"><div class="highlight"><pre><span class="c">{# /appname/templates/macro/form.jinja #}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">macro</span> <span class="nv">render_field</span><span class="o">(</span><span class="nv">field</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    &lt;div id=&quot;</span><span class="cp">{{</span> <span class="nv">field.id</span> <span class="cp">}}</span><span class="x">_row&quot; class=&quot;form-group&quot;&gt;</span>
 <span class="x">        </span><span class="cp">{{</span> <span class="nv">field.label</span><span class="o">(</span><span class="nv">class_</span><span class="o">=</span><span class="s1">&#39;col-lg-2 control-label&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
@@ -430,7 +430,7 @@ manage.py
 </article>
 <article class="slide level-2" id="id12">
 <h2>Rendering Forms</h2>
-<div class="highlight-jinja"><div class="highlight"><pre><span class="c">{# /appname/templates/form.jinja #}</span><span class="x"></span>
+<div class="highlight-jinja"><div class="highlight"><pre><span class="c">{# /appname/templates/macro/form.jinja #}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">macro</span> <span class="nv">render_field</span><span class="o">(</span><span class="nv">field</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    &lt;div id=&quot;</span><span class="cp">{{</span> <span class="nv">field.id</span> <span class="cp">}}</span><span class="x">_row&quot; class=&quot;form-group&quot;&gt;</span>
 <span class="x">        </span><span class="cp">{{</span> <span class="nv">field.label</span><span class="o">(</span><span class="nv">class_</span><span class="o">=</span><span class="s1">&#39;col-lg-2 control-label&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
@@ -456,6 +456,10 @@ manage.py
 </article>
 <article class="slide level-2" id="forms-with-sql-alchemy">
 <h2>Forms with SQL Alchemy</h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># /appname/models.py</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">String</span>
+</pre></div>
+</div>
 
 </article>
 <article class="slide level-2" id="assets">

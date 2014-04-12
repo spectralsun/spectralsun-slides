@@ -15,20 +15,29 @@ h2 {
 
 
 /***********************************/
-/** Large Applications with Flask **/
+/** Fifth Sized Flask **/
 /***********************************/
 
 /** First slide **/
-#large-applications-with-flask h1 {
-    font-size: 1.91em;
+#fifth-sized-flask h1 {
     margin-top: 0;
 }
-#large-applications-with-flask .figure {
+#fifth-sized-flask .figure {
     margin: 123px;
 }
-#large-applications-with-flask p:nth-child(3) {
+#fifth-sized-flask p:nth-child(3) {
     float: right;
     margin: -37px;
+}
+#fifth-sized-flask p:nth-child(4) {
+    position: absolute;
+    bottom: 13px;
+}
+#fifth-sized-flask img {
+    position: absolute;
+    right: 0;
+    bottom: 0;    
+    z-index: -1;
 }
 
 /* Simple server slide */
@@ -100,6 +109,7 @@ h2 {
 }
 
 /* Forms */
+#forms pre,
 #id9 pre,
 #id10 pre {
     margin: 15px 0;
