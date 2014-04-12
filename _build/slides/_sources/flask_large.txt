@@ -96,13 +96,65 @@ Flask-Script: Manage.py
 Blueprints: Modular Applications
 ================================
 
-.. code-block:: python
+.. include:: flask_large/blueprints/users.rst
 
-    # /appname/
-    from flask import Blueprint
+Blueprints: Modular Applications
+================================
+
+.. include:: flask_large/blueprints/users.rst
+
+.. include:: flask_large/blueprints/main.rst
 
 Forms
 =====
+
+.. code-block:: bash
+
+    pip install Flask-WTF
+
+.. code-block:: python
+    
+    # /appname/forms.py
+    from flask_wtf import Form
+    from wtforms import TextField, TextAreaField
+    from wtforms.validators import DataRequired
+
+    class ContactForm(Form):
+        name = TextField('name', validators=[DataRequired()])
+        email = TextField('email', validators=[DataRequired()])
+        message = TextAreaField('email', validators=[DataRequired()])
+
+.. code-block:: python
+    
+    # ...
+    @app.route('/contact')
+    def contact():
+        orm = ContactForm(request.form, prefix='contact_')
+    if not form.validate():
+
+
+Rendering Forms 
+===============
+
+.. code-block:: jinja
+
+    {% macro render_field(field) %}
+        <div id="{{ field.id }}_row" class="form-group">
+            {{ field.label(class_='col-lg-2 control-label') }}
+            <div class="col-lg-10">
+                {{ field(class_="form-control") }}
+            </div>
+        </div>
+    {% endmacro %}
+
+.. code-block:: jinja
+
+    {% macro render_form(form) %}
+        {% for field in form %}
+            {{ render_field(field) }}
+        {% endfor %}
+    {% endmacro %}
+
 
 
 Forms with SQL Alchemy

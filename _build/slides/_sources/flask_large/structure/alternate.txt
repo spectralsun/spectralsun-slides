@@ -6,8 +6,9 @@ An Alternative Example:
     manage.py
     /appname
         __init__.py
-        main.py
         database.py
+        forms.py
+        main.py
         models.py
         /controllers
             __init__.py

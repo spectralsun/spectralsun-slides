@@ -34,12 +34,13 @@ h2 {
 /* Simple server slide */
 #id2 .highlight-python,
 #id3 .highlight-python {
-    border-right: 1px solid #000000;
     display: inline-block;
     font-size: 25px;
     padding-right: 13px;
 }
-
+#id3 .highlight-python {
+    border-right: 1px solid #000000;
+}
 #id2 .highlight-python pre,
 #id3 .highlight-python pre {
     margin-bottom: 0;
@@ -60,22 +61,34 @@ h2 {
 
 
 /*  Structure of a Large App */
+#structure-of-a-large-flask-project div.highlight-bash:nth-child(3),
+#id4 div.highlight-bash:nth-child(3) {
+    display: inline-block;
+    padding-bottom: 63px;
+    padding-right: 54px;
+}
 #id4 div.highlight-bash:nth-child(3) {
     border-right: 1px solid #000000;
-    display: inline-block;
-    padding-bottom: 52px;
-    padding-right: 101px;
+}
+#structure-of-a-large-flask-project div.highlight-bash:nth-child(3) pre,
+#id4 div.highlight-bash:nth-child(3) pre {
+    margin-top: 9px;
+    padding: 5px 42px;
 }
 
 #id4 p:nth-child(4) {
     position: absolute;
-    right: 133px;
+    right: 112px;
     top: 85px;
 }
 #id4 div.highlight-bash:last-child {
     position: absolute; 
-    right: 86px; 
-    top: 100px; 
+    right: 76px; 
+    top: 110px; 
+    font-size: 0.94em;
+}
+#id4 div.highlight-bash:last-child pre {
+    padding: 5px 42px;
 }
 
 /* Flask-Script: Manage.py */
